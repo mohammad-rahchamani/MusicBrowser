@@ -19,10 +19,15 @@ enum AlbumListViewModel {
     
     struct ViewState: Equatable {
         var albums: [MusicAlbum]
+        var filteredAlbums: [MusicAlbum]
+        var query: String
         var isLoading: Bool
         
         static var initialState: ViewState {
-            ViewState(albums: [], isLoading: false)
+            ViewState(albums: [],
+                      filteredAlbums: [],
+                      query: "",
+                      isLoading: false)
         }
         
         static func fromAppState(_ state: AppState) -> ViewState {
@@ -39,16 +44,35 @@ enum AlbumListViewModel {
                 albums = loadedAlbums
                 isLoading = false
             }
+            
             albums.sort { $0.album < $1.album }
-            return ViewState(albums: albums, isLoading: isLoading)
+            
+            let query = state.query
+            
+            let filteredAlbums = query.isEmpty ? albums : albums.filter { album in
+                album.album.contains(query) ||
+                album.artist.contains(query) ||
+                album.tracks.map { $0.contains(query) }.reduce(false, { $0 || $1 })
+            }
+            
+            return ViewState(albums: albums,
+                             filteredAlbums: filteredAlbums,
+                             query: query,
+                             isLoading: isLoading)
         }
     }
     
     enum ViewAction: Equatable {
         case show
+        case filter(String)
         
         static func toAppAction(_ action: ViewAction) -> AppAction {
-            .load(.startLoading)
+            switch action {
+            case .show:
+                return .load(.startLoading)
+            case .filter(let string):
+                return .filter(.filter(string))
+            }
         }
         
     }
