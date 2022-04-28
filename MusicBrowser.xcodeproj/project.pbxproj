@@ -17,6 +17,7 @@
 		B529BCDF281A892100C613A7 /* MusicAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCDE281A892100C613A7 /* MusicAlbum.swift */; };
 		B529BCE2281A896F00C613A7 /* MusicLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCE1281A896F00C613A7 /* MusicLoader.swift */; };
 		B529BCE5281A89DF00C613A7 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCE4281A89DF00C613A7 /* URLProtocolStub.swift */; };
+		B529BCEA281B3F1200C613A7 /* CombineRex in Frameworks */ = {isa = PBXBuildFile; productRef = B529BCE9281B3F1200C613A7 /* CombineRex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B529BCEA281B3F1200C613A7 /* CombineRex in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +178,9 @@
 			dependencies = (
 			);
 			name = MusicBrowser;
+			packageProductDependencies = (
+				B529BCE9281B3F1200C613A7 /* CombineRex */,
+			);
 			productName = MusicBrowser;
 			productReference = B529BC70281A706300C613A7 /* MusicBrowser.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +254,9 @@
 				Base,
 			);
 			mainGroup = B529BC67281A706300C613A7;
+			packageReferences = (
+				B529BCE8281B3F1200C613A7 /* XCRemoteSwiftPackageReference "SwiftRex" */,
+			);
 			productRefGroup = B529BC71281A706300C613A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -635,6 +643,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B529BCE8281B3F1200C613A7 /* XCRemoteSwiftPackageReference "SwiftRex" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftRex/SwiftRex";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B529BCE9281B3F1200C613A7 /* CombineRex */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B529BCE8281B3F1200C613A7 /* XCRemoteSwiftPackageReference "SwiftRex" */;
+			productName = CombineRex;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B529BC68281A706300C613A7 /* Project object */;
 }
