@@ -23,6 +23,7 @@
 		B529BCF5281B427600C613A7 /* AlbumListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCF4281B427600C613A7 /* AlbumListReducer.swift */; };
 		B529BCF8281B454C00C613A7 /* AlbumLoaderMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCF7281B454C00C613A7 /* AlbumLoaderMiddleware.swift */; };
 		B529BCFC281B472200C613A7 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCFB281B472200C613A7 /* AlbumListView.swift */; };
+		B529BCFF281B47CA00C613A7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCFE281B47CA00C613A7 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		B529BCF4281B427600C613A7 /* AlbumListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListReducer.swift; sourceTree = "<group>"; };
 		B529BCF7281B454C00C613A7 /* AlbumLoaderMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumLoaderMiddleware.swift; sourceTree = "<group>"; };
 		B529BCFB281B472200C613A7 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
+		B529BCFE281B47CA00C613A7 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		B529BCF9281B46F500C613A7 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
+				B529BCFD281B47B700C613A7 /* Store */,
 				B529BCF6281B453600C613A7 /* Middleware */,
 				B529BCF3281B424000C613A7 /* Reducer */,
 				B529BCEE281B413400C613A7 /* Action */,
@@ -223,6 +226,14 @@
 				B529BCFB281B472200C613A7 /* AlbumListView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B529BCFD281B47B700C613A7 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B529BCFE281B47CA00C613A7 /* Store.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +378,7 @@
 				B529BCFC281B472200C613A7 /* AlbumListView.swift in Sources */,
 				B529BCF0281B414000C613A7 /* AppAction.swift in Sources */,
 				B529BCF8281B454C00C613A7 /* AlbumLoaderMiddleware.swift in Sources */,
+				B529BCFF281B47CA00C613A7 /* Store.swift in Sources */,
 				B529BCF2281B415600C613A7 /* LoadAction.swift in Sources */,
 				B529BCED281B406E00C613A7 /* AppState.swift in Sources */,
 				B529BCDF281A892100C613A7 /* MusicAlbum.swift in Sources */,
