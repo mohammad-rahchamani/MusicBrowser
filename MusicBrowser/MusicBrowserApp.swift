@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MusicBrowserApp: App {
+    
+    let store = Store.createStore()
+    
     var body: some Scene {
         WindowGroup {
-            AlbumListView()
+            AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store))
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct MusicAlbum: Equatable, Codable {
+public struct MusicAlbum: Identifiable, Equatable, Codable {
     public init(id: String, album: String, artist: String, cover: String, label: String, tracks: [String], year: String) {
         self.id = id
         self.album = album
