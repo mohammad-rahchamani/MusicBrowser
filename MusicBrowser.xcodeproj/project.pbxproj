@@ -27,6 +27,7 @@
 		B529BD01281B4F8300C613A7 /* FilterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD00281B4F8300C613A7 /* FilterAction.swift */; };
 		B529BD03281B500B00C613A7 /* FilterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD02281B500B00C613A7 /* FilterState.swift */; };
 		B529BD05281B502C00C613A7 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD04281B502C00C613A7 /* LoadState.swift */; };
+		B529BD07281B514B00C613A7 /* FilterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD06281B514B00C613A7 /* FilterReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		B529BD00281B4F8300C613A7 /* FilterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAction.swift; sourceTree = "<group>"; };
 		B529BD02281B500B00C613A7 /* FilterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterState.swift; sourceTree = "<group>"; };
 		B529BD04281B502C00C613A7 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		B529BD06281B514B00C613A7 /* FilterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				B529BCF4281B427600C613A7 /* AlbumListReducer.swift */,
+				B529BD06281B514B00C613A7 /* FilterReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				B529BCF8281B454C00C613A7 /* AlbumLoaderMiddleware.swift in Sources */,
 				B529BCFF281B47CA00C613A7 /* Store.swift in Sources */,
 				B529BCF2281B415600C613A7 /* LoadAction.swift in Sources */,
+				B529BD07281B514B00C613A7 /* FilterReducer.swift in Sources */,
 				B529BCED281B406E00C613A7 /* AppState.swift in Sources */,
 				B529BCDF281A892100C613A7 /* MusicAlbum.swift in Sources */,
 				B529BC74281A706300C613A7 /* MusicBrowserApp.swift in Sources */,
