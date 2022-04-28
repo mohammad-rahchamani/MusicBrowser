@@ -21,6 +21,7 @@
 		B529BCED281B406E00C613A7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCEC281B406E00C613A7 /* AppState.swift */; };
 		B529BCF0281B414000C613A7 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCEF281B414000C613A7 /* AppAction.swift */; };
 		B529BCF2281B415600C613A7 /* LoadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCF1281B415600C613A7 /* LoadAction.swift */; };
+		B529BCF5281B427600C613A7 /* AlbumListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCF4281B427600C613A7 /* AlbumListReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B529BCEC281B406E00C613A7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B529BCEF281B414000C613A7 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		B529BCF1281B415600C613A7 /* LoadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAction.swift; sourceTree = "<group>"; };
+		B529BCF4281B427600C613A7 /* AlbumListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		B529BC72281A706300C613A7 /* MusicBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				B529BCF3281B424000C613A7 /* Reducer */,
 				B529BCEE281B413400C613A7 /* Action */,
 				B529BCEB281B406000C613A7 /* State */,
 				B529BCE0281A895500C613A7 /* Service */,
@@ -185,6 +188,14 @@
 				B529BCF1281B415600C613A7 /* LoadAction.swift */,
 			);
 			path = Action;
+			sourceTree = "<group>";
+		};
+		B529BCF3281B424000C613A7 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				B529BCF4281B427600C613A7 /* AlbumListReducer.swift */,
+			);
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B529BCF5281B427600C613A7 /* AlbumListReducer.swift in Sources */,
 				B529BCE2281A896F00C613A7 /* MusicLoader.swift in Sources */,
 				B529BCF0281B414000C613A7 /* AppAction.swift in Sources */,
 				B529BCF2281B415600C613A7 /* LoadAction.swift in Sources */,

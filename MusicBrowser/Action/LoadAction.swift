@@ -11,4 +11,12 @@ enum LoadAction: Equatable {
     case startLoading
     case loadEnded([MusicAlbum])
     case loadFailed
+    
+    static func from(appAction: AppAction) -> LoadAction? {
+        switch appAction {
+        case .load(let action):
+            return action
+        }
+    }
+    
 }
