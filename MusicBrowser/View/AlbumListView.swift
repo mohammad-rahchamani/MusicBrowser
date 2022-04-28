@@ -26,15 +26,21 @@ enum AlbumListViewModel {
         }
         
         static func fromAppState(_ state: AppState) -> ViewState {
+            var albums: [MusicAlbum]
+            var isLoading: Bool
             switch state.albums {
             case .loading:
-                return ViewState(albums: [], isLoading: true)
+                albums = []
+                isLoading = true
             case .neverLoaded:
-                return ViewState(albums: [], isLoading: false)
-            case .loaded(let albums):
-                return ViewState(albums: albums, isLoading: false)
-                
+                albums = []
+                isLoading = false
+            case .loaded(let loadedAlbums):
+                albums = loadedAlbums
+                isLoading = false
             }
+            albums.sort { $0.album < $1.album }
+            return ViewState(albums: albums, isLoading: isLoading)
         }
     }
     
