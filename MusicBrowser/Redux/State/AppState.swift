@@ -18,8 +18,9 @@ extension Loadable: Equatable where T: Equatable { }
 struct AppState: Equatable {
     var albums: Loadable<[MusicAlbum]>
     
+    var query: String
     
     static var initialState: AppState {
-        AppState(albums: .neverLoaded)
+        AppState(albums: .neverLoaded, query: "")
     }
 }

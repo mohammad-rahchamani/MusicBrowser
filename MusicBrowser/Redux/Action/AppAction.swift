@@ -9,4 +9,5 @@ import Foundation
 
 enum AppAction: Equatable {
     case load(LoadAction)
+    case filter(FilterAction)
 }

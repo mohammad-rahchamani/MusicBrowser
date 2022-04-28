@@ -24,6 +24,9 @@
 		B529BCF8281B454C00C613A7 /* AlbumLoaderMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCF7281B454C00C613A7 /* AlbumLoaderMiddleware.swift */; };
 		B529BCFC281B472200C613A7 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCFB281B472200C613A7 /* AlbumListView.swift */; };
 		B529BCFF281B47CA00C613A7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCFE281B47CA00C613A7 /* Store.swift */; };
+		B529BD01281B4F8300C613A7 /* FilterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD00281B4F8300C613A7 /* FilterAction.swift */; };
+		B529BD03281B500B00C613A7 /* FilterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD02281B500B00C613A7 /* FilterState.swift */; };
+		B529BD05281B502C00C613A7 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD04281B502C00C613A7 /* LoadState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		B529BCF7281B454C00C613A7 /* AlbumLoaderMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumLoaderMiddleware.swift; sourceTree = "<group>"; };
 		B529BCFB281B472200C613A7 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
 		B529BCFE281B47CA00C613A7 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B529BD00281B4F8300C613A7 /* FilterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAction.swift; sourceTree = "<group>"; };
+		B529BD02281B500B00C613A7 /* FilterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterState.swift; sourceTree = "<group>"; };
+		B529BD04281B502C00C613A7 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				B529BCEC281B406E00C613A7 /* AppState.swift */,
+				B529BD02281B500B00C613A7 /* FilterState.swift */,
+				B529BD04281B502C00C613A7 /* LoadState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 			children = (
 				B529BCEF281B414000C613A7 /* AppAction.swift */,
 				B529BCF1281B415600C613A7 /* LoadAction.swift */,
+				B529BD00281B4F8300C613A7 /* FilterAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -374,9 +383,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B529BCF5281B427600C613A7 /* AlbumListReducer.swift in Sources */,
+				B529BD05281B502C00C613A7 /* LoadState.swift in Sources */,
 				B529BCE2281A896F00C613A7 /* MusicLoader.swift in Sources */,
 				B529BCFC281B472200C613A7 /* AlbumListView.swift in Sources */,
+				B529BD03281B500B00C613A7 /* FilterState.swift in Sources */,
 				B529BCF0281B414000C613A7 /* AppAction.swift in Sources */,
+				B529BD01281B4F8300C613A7 /* FilterAction.swift in Sources */,
 				B529BCF8281B454C00C613A7 /* AlbumLoaderMiddleware.swift in Sources */,
 				B529BCFF281B47CA00C613A7 /* Store.swift in Sources */,
 				B529BCF2281B415600C613A7 /* LoadAction.swift in Sources */,

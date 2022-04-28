@@ -10,7 +10,7 @@ import SwiftRex
 
 struct AlbumListReducer {
     
-    private static let reducer = Reducer<LoadAction, AppState>.reduce { action, state in
+    private static let reducer = Reducer<LoadAction, LoadState>.reduce { action, state in
         switch action {
         case .loadFailed:
             state.albums = .neverLoaded
@@ -20,9 +20,9 @@ struct AlbumListReducer {
             state.albums = .loaded(albums)
         }
     }
-    
+//    let a = reducer.li
     static let lifted = reducer.lift(actionGetter: LoadAction.from(appAction:),
-                                     stateGetter: { $0 },
-                                     stateSetter: { $0.albums = $1.albums})
+                                     stateGetter: LoadState.from(appState:),
+                                     stateSetter: { $0.albums = $1.albums })
     
 }

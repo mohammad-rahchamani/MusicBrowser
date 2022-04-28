@@ -16,6 +16,8 @@ enum LoadAction: Equatable {
         switch appAction {
         case .load(let action):
             return action
+        default:
+            return nil
         }
     }
     
