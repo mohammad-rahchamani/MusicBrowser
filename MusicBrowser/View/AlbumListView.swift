@@ -83,8 +83,6 @@ struct AlbumListView: View {
     
     @ObservedObject var viewModel: ObservableViewModel<AlbumListViewModel.ViewAction, AlbumListViewModel.ViewState>
     
-    @State var searchText: String = ""
-    
     var isLoading: Bool {
         viewModel.state.isLoading
     }
@@ -116,9 +114,9 @@ struct AlbumListView: View {
                     contentView
                 }
             }
-            .searchable(text: $searchText)
+            .searchable(text: $viewModel.state.query)
             .navigationTitle("Music Browser")
-            .onChange(of: searchText) { query in
+            .onChange(of: viewModel.state.query) { query in
                 viewModel.dispatch(.filter(query))
             }
         }.onAppear {
