@@ -90,7 +90,7 @@ struct AlbumListView: View {
     }
     
     var albums: [MusicAlbum] {
-        viewModel.state.albums
+        viewModel.state.filteredAlbums
     }
     
     @ViewBuilder
@@ -108,11 +108,18 @@ struct AlbumListView: View {
     }
     
     var body: some View {
-        Group {
-            if isLoading {
-                loadingView
-            } else {
-                contentView
+        NavigationView {
+            Group {
+                if isLoading {
+                    loadingView
+                } else {
+                    contentView
+                }
+            }
+            .searchable(text: $searchText)
+            .navigationTitle("Music Browser")
+            .onChange(of: searchText) { query in
+                viewModel.dispatch(.filter(query))
             }
         }.onAppear {
             viewModel.dispatch(.show)
