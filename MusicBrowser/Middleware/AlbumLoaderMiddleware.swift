@@ -43,3 +43,12 @@ class AlbumLoaderMiddleware: MiddlewareProtocol {
     }
     
 }
+
+extension AlbumLoaderMiddleware {
+    
+    func lifted() -> LiftMiddleware<AppAction, AppAction, AppState, AlbumLoaderMiddleware> {
+        lift(inputAction: LoadAction.from(appAction:),
+             outputAction: LoadAction.toAppAction(_:),
+             state: { _ in } )
+    }
+}

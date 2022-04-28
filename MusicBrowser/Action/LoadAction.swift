@@ -19,4 +19,8 @@ enum LoadAction: Equatable {
         }
     }
     
+    static func toAppAction(_ action: LoadAction) -> AppAction {
+        .load(action)
+    }
+    
 }
