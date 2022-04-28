@@ -11,9 +11,9 @@
 		B529BC76281A706300C613A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BC75281A706300C613A7 /* ContentView.swift */; };
 		B529BC78281A706500C613A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B529BC77281A706500C613A7 /* Assets.xcassets */; };
 		B529BC7B281A706500C613A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B529BC7A281A706500C613A7 /* Preview Assets.xcassets */; };
-		B529BC85281A706500C613A7 /* MusicBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BC84281A706500C613A7 /* MusicBrowserTests.swift */; };
 		B529BC8F281A706500C613A7 /* MusicBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BC8E281A706500C613A7 /* MusicBrowserUITests.swift */; };
 		B529BC91281A706500C613A7 /* MusicBrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BC90281A706500C613A7 /* MusicBrowserUITestsLaunchTests.swift */; };
+		B529BCDC281A7F4B00C613A7 /* MusicLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCDB281A7F4B00C613A7 /* MusicLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,10 @@
 		B529BC77281A706500C613A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B529BC7A281A706500C613A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B529BC80281A706500C613A7 /* MusicBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B529BC84281A706500C613A7 /* MusicBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrowserTests.swift; sourceTree = "<group>"; };
 		B529BC8A281A706500C613A7 /* MusicBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B529BC8E281A706500C613A7 /* MusicBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrowserUITests.swift; sourceTree = "<group>"; };
 		B529BC90281A706500C613A7 /* MusicBrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B529BCDB281A7F4B00C613A7 /* MusicLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 		B529BC83281A706500C613A7 /* MusicBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				B529BC84281A706500C613A7 /* MusicBrowserTests.swift */,
+				B529BCDB281A7F4B00C613A7 /* MusicLoaderTests.swift */,
 			);
 			path = MusicBrowserTests;
 			sourceTree = "<group>";
@@ -198,6 +198,7 @@
 					};
 					B529BC7F281A706500C613A7 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = B529BC6F281A706300C613A7;
 					};
 					B529BC89281A706500C613A7 = {
@@ -266,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B529BC85281A706500C613A7 /* MusicBrowserTests.swift in Sources */,
+				B529BCDC281A7F4B00C613A7 /* MusicLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,15 +475,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8LK77AKP63;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.rahchamani.MusicBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicBrowser.app/MusicBrowser";
@@ -494,11 +502,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8LK77AKP63;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.rahchamani.MusicBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
