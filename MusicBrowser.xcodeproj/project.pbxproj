@@ -18,6 +18,7 @@
 		B529BCE2281A896F00C613A7 /* MusicLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCE1281A896F00C613A7 /* MusicLoader.swift */; };
 		B529BCE5281A89DF00C613A7 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCE4281A89DF00C613A7 /* URLProtocolStub.swift */; };
 		B529BCEA281B3F1200C613A7 /* CombineRex in Frameworks */ = {isa = PBXBuildFile; productRef = B529BCE9281B3F1200C613A7 /* CombineRex */; };
+		B529BCED281B406E00C613A7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BCEC281B406E00C613A7 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B529BCDE281A892100C613A7 /* MusicAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAlbum.swift; sourceTree = "<group>"; };
 		B529BCE1281A896F00C613A7 /* MusicLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLoader.swift; sourceTree = "<group>"; };
 		B529BCE4281A89DF00C613A7 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		B529BCEC281B406E00C613A7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		B529BC72281A706300C613A7 /* MusicBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				B529BCEB281B406000C613A7 /* State */,
 				B529BCE0281A895500C613A7 /* Service */,
 				B529BCDD281A891300C613A7 /* Model */,
 				B529BC73281A706300C613A7 /* MusicBrowserApp.swift */,
@@ -160,6 +163,14 @@
 				B529BCE4281A89DF00C613A7 /* URLProtocolStub.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B529BCEB281B406000C613A7 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				B529BCEC281B406E00C613A7 /* AppState.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B529BCE2281A896F00C613A7 /* MusicLoader.swift in Sources */,
+				B529BCED281B406E00C613A7 /* AppState.swift in Sources */,
 				B529BC76281A706300C613A7 /* ContentView.swift in Sources */,
 				B529BCDF281A892100C613A7 /* MusicAlbum.swift in Sources */,
 				B529BC74281A706300C613A7 /* MusicBrowserApp.swift in Sources */,
