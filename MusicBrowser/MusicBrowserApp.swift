@@ -14,7 +14,20 @@ struct MusicBrowserApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store))
+            DashboardView(viewModel: DashboardViewModel.viewModel(from: store),
+                          albumPage: {
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store))
+            },
+                        artistPage: {
+                    Text("artists")
+                },
+                        trackPage: {
+                ZStack {
+                    Color.green
+                    Text("ok")
+                }
+                .edgesIgnoringSafeArea(.all)
+            })
         }
     }
 }

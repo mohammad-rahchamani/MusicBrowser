@@ -8,35 +8,37 @@
 import SwiftUI
 import CombineRex
 
-struct DashboardView: View {
+struct DashboardView<FirstTab: View, SecondTab: View, ThirdTab: View>: View {
     
     @ObservedObject var viewModel: ObservableViewModel<DashboardViewModel.ViewAction, DashboardViewModel.ViewState>
     
-    let albumPage: () -> AnyView
-    let trackPage: () -> AnyView
+    let albumPage: () -> FirstTab
+    let artistPage: () -> SecondTab
+    let trackPage: () -> ThirdTab
     
     init(viewModel: ObservableViewModel<DashboardViewModel.ViewAction, DashboardViewModel.ViewState>,
-         albumPage: @escaping () -> AnyView,
-         trackPage: @escaping () -> AnyView) {
+         albumPage: @escaping () -> FirstTab,
+         artistPage: @escaping () -> SecondTab,
+         trackPage: @escaping () -> ThirdTab) {
         self.viewModel = viewModel
         self.albumPage = albumPage
+        self.artistPage = artistPage
         self.trackPage = trackPage
     }
     
     var body: some View {
-//        TabView(selection: $viewModel.state.selectedTab) {
         TabView(selection: $viewModel.state.selectedTab) {
             albumPage()
                 .tabItem({ Text ("Albums")})
                 .tag(TabState.album)
-            
+            artistPage()
+                .tabItem({ Text ("Artists")})
+                .tag(TabState.artist)
             trackPage()
-//            AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store))
                 .tabItem({ Text ("Tracks")})
                 .tag(TabState.track)
         }
         .onChange(of: viewModel.state.selectedTab) { tab in
-            print("send select \(tab) action")
             viewModel.dispatch(.select(tab))
         }
     }
