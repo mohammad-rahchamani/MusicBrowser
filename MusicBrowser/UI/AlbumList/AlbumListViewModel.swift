@@ -11,10 +11,10 @@ import SwiftRex
 
 enum AlbumListViewModel {
     
-    static func viewModel<S: StoreType>(from store: S) -> ObservableViewModel<ViewAction, ViewState> where S.ActionType == AppAction, S.StateType == AppState {
+    static func viewModel<S: StoreType>(from store: S, withTitle title: String) -> ObservableViewModel<ViewAction, ViewState> where S.ActionType == AppAction, S.StateType == AppState {
         store.projection(action: ViewAction.toAppAction(_:),
-                         state: ViewState.fromAppState(_:))
-            .asObservableViewModel(initialState: .initialState)
+                         state: { ViewState.fromAppState($0, title: title) })
+            .asObservableViewModel(initialState: ViewState.initialState(for: title))
     }
     
     struct ViewState: Equatable {
@@ -22,15 +22,17 @@ enum AlbumListViewModel {
         var filteredAlbums: [MusicAlbum]
         var query: String
         var isLoading: Bool
+        var title: String
         
-        static var initialState: ViewState {
+        static func initialState(for title: String) ->  ViewState {
             ViewState(albums: [],
                       filteredAlbums: [],
                       query: "",
-                      isLoading: false)
+                      isLoading: false,
+                      title: title)
         }
         
-        static func fromAppState(_ state: AppState) -> ViewState {
+        static func fromAppState(_ state: AppState, title: String) -> ViewState {
             var albums: [MusicAlbum]
             var isLoading: Bool
             switch state.albums {
@@ -58,7 +60,8 @@ enum AlbumListViewModel {
             return ViewState(albums: albums,
                              filteredAlbums: filteredAlbums,
                              query: query,
-                             isLoading: isLoading)
+                             isLoading: isLoading,
+                             title: title)
         }
     }
     

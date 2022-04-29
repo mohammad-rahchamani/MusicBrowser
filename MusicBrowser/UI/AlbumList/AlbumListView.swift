@@ -53,7 +53,7 @@ struct AlbumListView<ListItem: View>: View {
                 }
             }
             .searchable(text: $viewModel.state.query)
-            .navigationTitle("Music Browser")
+            .navigationTitle(viewModel.state.title)
             .onChange(of: viewModel.state.query) { query in
                 viewModel.dispatch(.filter(query))
             }
