@@ -17,21 +17,31 @@ struct MusicBrowserApp: App {
             DashboardView(viewModel: DashboardViewModel.viewModel(from: store),
                           albumPage: {
                 AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store)) { album in
+                    
                     HStack {
+                        AsyncImage(url: URL(string: album.cover)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 48, height: 48)
+                        
                         Text("\(album.album)")
                         Spacer()
                         Text("\(album.year)")
                     }
                 }
             },
-                        artistPage: {
+                          artistPage: {
                 ArtistListView(viewModel: ArtistListViewModel.viewModel(from: store)) { artist in
                     Text("\(artist)")
                 }
-                },
-                        trackPage: {
+            },
+                          trackPage: {
                 TrackListView(viewModel: TrackListViewModel.viewModel(from: store)) { track in
-                        Text("\(track)")
+                    Text("\(track)")
                 }
             })
         }
