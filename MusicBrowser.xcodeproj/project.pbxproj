@@ -31,6 +31,7 @@
 		B529BD0F281B6E6600C613A7 /* TabState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD0E281B6E6600C613A7 /* TabState.swift */; };
 		B529BD11281B6E7D00C613A7 /* TabAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD10281B6E7D00C613A7 /* TabAction.swift */; };
 		B529BD13281B6E9000C613A7 /* TabReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD12281B6E9000C613A7 /* TabReducer.swift */; };
+		B529BD19281B6F5400C613A7 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD18281B6F5400C613A7 /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		B529BD0E281B6E6600C613A7 /* TabState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabState.swift; sourceTree = "<group>"; };
 		B529BD10281B6E7D00C613A7 /* TabAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAction.swift; sourceTree = "<group>"; };
 		B529BD12281B6E9000C613A7 /* TabReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabReducer.swift; sourceTree = "<group>"; };
+		B529BD18281B6F5400C613A7 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,7 @@
 		B529BC72281A706300C613A7 /* MusicBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				B529BCFA281B470700C613A7 /* View */,
+				B529BCFA281B470700C613A7 /* UI */,
 				B529BCF9281B46F500C613A7 /* Redux */,
 				B529BCE0281A895500C613A7 /* Service */,
 				B529BCDD281A891300C613A7 /* Model */,
@@ -241,12 +243,13 @@
 			path = Redux;
 			sourceTree = "<group>";
 		};
-		B529BCFA281B470700C613A7 /* View */ = {
+		B529BCFA281B470700C613A7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B529BCFB281B472200C613A7 /* AlbumListView.swift */,
+				B529BD17281B6F4200C613A7 /* Dashboard */,
+				B529BD14281B6F2900C613A7 /* AlbumList */,
 			);
-			path = View;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		B529BCFD281B47B700C613A7 /* Store */ = {
@@ -255,6 +258,22 @@
 				B529BCFE281B47CA00C613A7 /* Store.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		B529BD14281B6F2900C613A7 /* AlbumList */ = {
+			isa = PBXGroup;
+			children = (
+				B529BCFB281B472200C613A7 /* AlbumListView.swift */,
+			);
+			path = AlbumList;
+			sourceTree = "<group>";
+		};
+		B529BD17281B6F4200C613A7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				B529BD18281B6F5400C613A7 /* DashboardView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +426,7 @@
 				B529BCFF281B47CA00C613A7 /* Store.swift in Sources */,
 				B529BCF2281B415600C613A7 /* LoadAction.swift in Sources */,
 				B529BD07281B514B00C613A7 /* FilterReducer.swift in Sources */,
+				B529BD19281B6F5400C613A7 /* DashboardView.swift in Sources */,
 				B529BCED281B406E00C613A7 /* AppState.swift in Sources */,
 				B529BCDF281A892100C613A7 /* MusicAlbum.swift in Sources */,
 				B529BC74281A706300C613A7 /* MusicBrowserApp.swift in Sources */,

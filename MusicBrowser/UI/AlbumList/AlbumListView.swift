@@ -124,9 +124,3 @@ struct AlbumListView: View {
         }
     }
 }
-
-//struct AlbumListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AlbumListView()
-//    }
-//}
