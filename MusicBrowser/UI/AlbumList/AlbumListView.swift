@@ -9,9 +9,17 @@ import SwiftUI
 import SwiftRex
 import CombineRex
 
-struct AlbumListView: View {
+struct AlbumListView<ListItem: View>: View {
     
     @ObservedObject var viewModel: ObservableViewModel<AlbumListViewModel.ViewAction, AlbumListViewModel.ViewState>
+    
+    let itemRendered: (MusicAlbum) -> ListItem
+    
+    init(viewModel: ObservableViewModel<AlbumListViewModel.ViewAction, AlbumListViewModel.ViewState>,
+         itemRendered: @escaping (MusicAlbum) -> ListItem) {
+        self.viewModel = viewModel
+        self.itemRendered = itemRendered
+    }
     
     var isLoading: Bool {
         viewModel.state.isLoading
@@ -30,7 +38,7 @@ struct AlbumListView: View {
     var contentView: some View {
         VStack {
             List(albums) { album in
-                Text(album.album)
+                self.itemRendered(album)
             }
         }
     }

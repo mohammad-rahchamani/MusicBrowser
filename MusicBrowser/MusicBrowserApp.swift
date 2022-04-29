@@ -16,10 +16,20 @@ struct MusicBrowserApp: App {
         WindowGroup {
             DashboardView(viewModel: DashboardViewModel.viewModel(from: store),
                           albumPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store))
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store)) { album in
+                    HStack {
+                        Text("\(album.album)")
+                        Spacer()
+                        Text("\(album.year)")
+                    }
+                }
             },
                         artistPage: {
-                    Text("artists")
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store)) { album in
+                    HStack {
+                        Text("\(album.artist)")
+                    }
+                }
                 },
                         trackPage: {
                 ZStack {
