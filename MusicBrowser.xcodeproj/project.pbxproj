@@ -93,6 +93,7 @@
 		B529BD24281B803700C613A7 /* TrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListView.swift; sourceTree = "<group>"; };
 		B529BD26281B809100C613A7 /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		B529BD29281B919800C613A7 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		B529BD2B281B949500C613A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 		B529BC67281A706300C613A7 = {
 			isa = PBXGroup;
 			children = (
+				B529BD2B281B949500C613A7 /* README.md */,
 				B529BC72281A706300C613A7 /* MusicBrowser */,
 				B529BC83281A706500C613A7 /* MusicBrowserTests */,
 				B529BC8D281A706500C613A7 /* MusicBrowserUITests */,
