@@ -18,45 +18,44 @@ enum ArtistListViewModel {
     }
     
     struct ViewState: Equatable {
-        var albums: [MusicAlbum]
-        var filteredAlbums: [MusicAlbum]
+        var artists: [String]
+        var filteredArtists: [String]
         var query: String
         var isLoading: Bool
         let title = "Artists"
         
         static var initialState:  ViewState {
-            ViewState(albums: [],
-                      filteredAlbums: [],
+            ViewState(artists: [],
+                      filteredArtists: [],
                       query: "",
                       isLoading: false)
         }
         
         static func fromAppState(_ state: AppState) -> ViewState {
-            var albums: [MusicAlbum]
+            var artists: [String]
             var isLoading: Bool
             switch state.albums {
             case .loading:
-                albums = []
+                artists = []
                 isLoading = true
             case .neverLoaded:
-                albums = []
+                artists = []
                 isLoading = false
             case .loaded(let loadedAlbums):
-                albums = loadedAlbums
+                artists = loadedAlbums.map { $0.artist }
                 isLoading = false
             }
             
-            albums = albums.sorted { $0.artist < $1.artist }
+            artists = artists.sorted { $0 < $1 }.unique()
+            
             let query = state.query
             
-            let filteredAlbums = query.isEmpty ? albums : albums.filter { album in
-                album.album.contains(query) ||
-                album.artist.contains(query) ||
-                album.tracks.map { $0.contains(query) }.reduce(false, { $0 || $1 })
+            let filteredArtists = query.isEmpty ? artists : artists.filter { artist in
+                artist.contains(query)
             }
             
-            return ViewState(albums: albums,
-                             filteredAlbums: filteredAlbums,
+            return ViewState(artists: artists,
+                             filteredArtists: filteredArtists,
                              query: query,
                              isLoading: isLoading)
         }

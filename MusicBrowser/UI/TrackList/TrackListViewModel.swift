@@ -18,45 +18,44 @@ enum TrackListViewModel {
     }
     
     struct ViewState: Equatable {
-        var albums: [MusicAlbum]
-        var filteredAlbums: [MusicAlbum]
+        var tracks: [String]
+        var filteredTracks: [String]
         var query: String
         var isLoading: Bool
         let title = "Tracks"
         
         static var initialState:  ViewState {
-            ViewState(albums: [],
-                      filteredAlbums: [],
+            ViewState(tracks: [],
+                      filteredTracks: [],
                       query: "",
                       isLoading: false)
         }
         
         static func fromAppState(_ state: AppState) -> ViewState {
-            var albums: [MusicAlbum]
+            var tracks: [String]
             var isLoading: Bool
             switch state.albums {
             case .loading:
-                albums = []
+                tracks = []
                 isLoading = true
             case .neverLoaded:
-                albums = []
+                tracks = []
                 isLoading = false
             case .loaded(let loadedAlbums):
-                albums = loadedAlbums
+                tracks = loadedAlbums.flatMap { $0.tracks }
                 isLoading = false
             }
             
-            albums = albums.sorted { $0.artist < $1.artist }
+            tracks = tracks.sorted { $0 < $1 }.unique()
+            
             let query = state.query
             
-            let filteredAlbums = query.isEmpty ? albums : albums.filter { album in
-                album.album.contains(query) ||
-                album.artist.contains(query) ||
-                album.tracks.map { $0.contains(query) }.reduce(false, { $0 || $1 })
+            let filteredTracks = query.isEmpty ? tracks : tracks.filter { track in
+                track.contains(query)
             }
             
-            return ViewState(albums: albums,
-                             filteredAlbums: filteredAlbums,
+            return ViewState(tracks: tracks,
+                             filteredTracks: filteredTracks,
                              query: query,
                              isLoading: isLoading)
         }

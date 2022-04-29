@@ -36,6 +36,9 @@
 		B529BD1D281B6FFB00C613A7 /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD1C281B6FFB00C613A7 /* AlbumListViewModel.swift */; };
 		B529BD21281B7E0400C613A7 /* TrackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD20281B7E0400C613A7 /* TrackListViewModel.swift */; };
 		B529BD23281B7E0F00C613A7 /* ArtistListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD22281B7E0F00C613A7 /* ArtistListViewModel.swift */; };
+		B529BD25281B803700C613A7 /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD24281B803700C613A7 /* TrackListView.swift */; };
+		B529BD27281B809100C613A7 /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD26281B809100C613A7 /* ArtistListView.swift */; };
+		B529BD2A281B919800C613A7 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD29281B919800C613A7 /* Sequence+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		B529BD1C281B6FFB00C613A7 /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
 		B529BD20281B7E0400C613A7 /* TrackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewModel.swift; sourceTree = "<group>"; };
 		B529BD22281B7E0F00C613A7 /* ArtistListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListViewModel.swift; sourceTree = "<group>"; };
+		B529BD24281B803700C613A7 /* TrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListView.swift; sourceTree = "<group>"; };
+		B529BD26281B809100C613A7 /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
+		B529BD29281B919800C613A7 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 		B529BC72281A706300C613A7 /* MusicBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				B529BD28281B918200C613A7 /* Helper */,
 				B529BCFA281B470700C613A7 /* UI */,
 				B529BCF9281B46F500C613A7 /* Redux */,
 				B529BCE0281A895500C613A7 /* Service */,
@@ -292,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				B529BD20281B7E0400C613A7 /* TrackListViewModel.swift */,
+				B529BD24281B803700C613A7 /* TrackListView.swift */,
 			);
 			path = TrackList;
 			sourceTree = "<group>";
@@ -300,8 +308,17 @@
 			isa = PBXGroup;
 			children = (
 				B529BD22281B7E0F00C613A7 /* ArtistListViewModel.swift */,
+				B529BD26281B809100C613A7 /* ArtistListView.swift */,
 			);
 			path = ArtistList;
+			sourceTree = "<group>";
+		};
+		B529BD28281B918200C613A7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B529BD29281B919800C613A7 /* Sequence+Extension.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,12 +463,14 @@
 				B529BD13281B6E9000C613A7 /* TabReducer.swift in Sources */,
 				B529BD23281B7E0F00C613A7 /* ArtistListViewModel.swift in Sources */,
 				B529BD0F281B6E6600C613A7 /* TabState.swift in Sources */,
+				B529BD25281B803700C613A7 /* TrackListView.swift in Sources */,
 				B529BD1D281B6FFB00C613A7 /* AlbumListViewModel.swift in Sources */,
 				B529BD1B281B6FD400C613A7 /* DashboardViewModel.swift in Sources */,
 				B529BCE2281A896F00C613A7 /* MusicLoader.swift in Sources */,
 				B529BD21281B7E0400C613A7 /* TrackListViewModel.swift in Sources */,
 				B529BCFC281B472200C613A7 /* AlbumListView.swift in Sources */,
 				B529BD03281B500B00C613A7 /* FilterState.swift in Sources */,
+				B529BD2A281B919800C613A7 /* Sequence+Extension.swift in Sources */,
 				B529BCF0281B414000C613A7 /* AppAction.swift in Sources */,
 				B529BD01281B4F8300C613A7 /* FilterAction.swift in Sources */,
 				B529BCF8281B454C00C613A7 /* AlbumLoaderMiddleware.swift in Sources */,
@@ -461,6 +480,7 @@
 				B529BD19281B6F5400C613A7 /* DashboardView.swift in Sources */,
 				B529BCED281B406E00C613A7 /* AppState.swift in Sources */,
 				B529BCDF281A892100C613A7 /* MusicAlbum.swift in Sources */,
+				B529BD27281B809100C613A7 /* ArtistListView.swift in Sources */,
 				B529BC74281A706300C613A7 /* MusicBrowserApp.swift in Sources */,
 				B529BD11281B6E7D00C613A7 /* TabAction.swift in Sources */,
 			);

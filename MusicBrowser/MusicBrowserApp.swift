@@ -25,19 +25,13 @@ struct MusicBrowserApp: App {
                 }
             },
                         artistPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store)) { album in
-                    HStack {
-                        Text("\(album.artist)")
-                    }
+                ArtistListView(viewModel: ArtistListViewModel.viewModel(from: store)) { artist in
+                    Text("\(artist)")
                 }
                 },
                         trackPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store)) { album in
-//                    VStack {
-                        List(album.tracks) { track in
-                            Text("\(track)")
-                        }
-//                    }
+                TrackListView(viewModel: TrackListViewModel.viewModel(from: store)) { track in
+                        Text("\(track)")
                 }
             })
         }
