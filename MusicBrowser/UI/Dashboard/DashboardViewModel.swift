@@ -30,10 +30,13 @@ enum DashboardViewModel {
     }
     
     enum ViewAction: Equatable {
+        case show
         case select(TabState)
         
         static func toAppAction(_ action: ViewAction) -> AppAction {
             switch action {
+            case .show:
+                return .load(.startLoading)
             case .select(let tab):
                 return .tab(.select(tab))
             }

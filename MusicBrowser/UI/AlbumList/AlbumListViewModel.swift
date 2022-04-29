@@ -63,13 +63,10 @@ enum AlbumListViewModel {
     }
     
     enum ViewAction: Equatable {
-        case show
         case filter(String)
         
         static func toAppAction(_ action: ViewAction) -> AppAction {
             switch action {
-            case .show:
-                return .load(.startLoading)
             case .filter(let string):
                 return .filter(.filter(string))
             }

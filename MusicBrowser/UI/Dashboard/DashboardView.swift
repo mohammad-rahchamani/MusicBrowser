@@ -40,6 +40,8 @@ struct DashboardView<FirstTab: View, SecondTab: View, ThirdTab: View>: View {
         }
         .onChange(of: viewModel.state.selectedTab) { tab in
             viewModel.dispatch(.select(tab))
+        }.onAppear {
+            viewModel.dispatch(.show)
         }
     }
 }

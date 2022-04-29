@@ -49,8 +49,6 @@ struct AlbumListView: View {
             .onChange(of: viewModel.state.query) { query in
                 viewModel.dispatch(.filter(query))
             }
-        }.onAppear {
-            viewModel.dispatch(.show)
         }
     }
 }
