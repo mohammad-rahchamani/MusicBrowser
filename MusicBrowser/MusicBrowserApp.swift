@@ -16,7 +16,9 @@ struct MusicBrowserApp: App {
         WindowGroup {
             DashboardView(viewModel: DashboardViewModel.viewModel(from: store),
                           albumPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store, withTitle: "Albums")) { album in
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store,
+                                                                      withTitle: "Albums",
+                                                                      sorter: { $0.album < $1.album })) { album in
                     HStack {
                         Text("\(album.album)")
                         Spacer()
@@ -25,14 +27,18 @@ struct MusicBrowserApp: App {
                 }
             },
                         artistPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store, withTitle: "Artists")) { album in
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store,
+                                                                      withTitle: "Artists",
+                                                                      sorter: { $0.artist < $1.artist })) { album in
                     HStack {
                         Text("\(album.artist)")
                     }
                 }
                 },
                         trackPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store, withTitle: "Tracks")) { album in
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store,
+                                                                      withTitle: "Tracks",
+                                                                      sorter: { _,_ in true })) { album in
                     HStack {
                         Text("\(album.artist)")
                     }
