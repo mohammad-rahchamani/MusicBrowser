@@ -13,7 +13,7 @@ class Store: ReduxStoreBase<AppAction, AppState> {
     
     static func createStore() -> Store {
         
-        let appReducer = AlbumListReducer.lifted <> FilterReducer.lifted
+        let appReducer = AlbumListReducer.lifted <> FilterReducer.lifted <> TabReducer.lifted
         
         let albumLoader = MusicLoader(session: .shared,
                                       url: URL(string: "https://1979673067.rsc.cdn77.org/music-albums.json")!)

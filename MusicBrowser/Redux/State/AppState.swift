@@ -20,7 +20,9 @@ struct AppState: Equatable {
     
     var query: String
     
+    var selectedTab: TabState
+    
     static var initialState: AppState {
-        AppState(albums: .neverLoaded, query: "")
+        AppState(albums: .neverLoaded, query: "", selectedTab: .album)
     }
 }
