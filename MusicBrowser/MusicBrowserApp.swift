@@ -16,9 +16,7 @@ struct MusicBrowserApp: App {
         WindowGroup {
             DashboardView(viewModel: DashboardViewModel.viewModel(from: store),
                           albumPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store,
-                                                                      withTitle: "Albums",
-                                                                      sorter: { $0.album < $1.album })) { album in
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store)) { album in
                     HStack {
                         Text("\(album.album)")
                         Spacer()
@@ -27,23 +25,27 @@ struct MusicBrowserApp: App {
                 }
             },
                         artistPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store,
-                                                                      withTitle: "Artists",
-                                                                      sorter: { $0.artist < $1.artist })) { album in
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store)) { album in
                     HStack {
                         Text("\(album.artist)")
                     }
                 }
                 },
                         trackPage: {
-                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store,
-                                                                      withTitle: "Tracks",
-                                                                      sorter: { _,_ in true })) { album in
-                    HStack {
-                        Text("\(album.artist)")
-                    }
+                AlbumListView(viewModel: AlbumListViewModel.viewModel(from: store)) { album in
+//                    VStack {
+                        List(album.tracks) { track in
+                            Text("\(track)")
+                        }
+//                    }
                 }
             })
         }
+    }
+}
+
+extension String: Identifiable {
+    public var id: String {
+        self
     }
 }

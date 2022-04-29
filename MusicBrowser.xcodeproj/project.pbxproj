@@ -34,6 +34,8 @@
 		B529BD19281B6F5400C613A7 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD18281B6F5400C613A7 /* DashboardView.swift */; };
 		B529BD1B281B6FD400C613A7 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD1A281B6FD400C613A7 /* DashboardViewModel.swift */; };
 		B529BD1D281B6FFB00C613A7 /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD1C281B6FFB00C613A7 /* AlbumListViewModel.swift */; };
+		B529BD21281B7E0400C613A7 /* TrackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD20281B7E0400C613A7 /* TrackListViewModel.swift */; };
+		B529BD23281B7E0F00C613A7 /* ArtistListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B529BD22281B7E0F00C613A7 /* ArtistListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		B529BD18281B6F5400C613A7 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		B529BD1A281B6FD400C613A7 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		B529BD1C281B6FFB00C613A7 /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
+		B529BD20281B7E0400C613A7 /* TrackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewModel.swift; sourceTree = "<group>"; };
+		B529BD22281B7E0F00C613A7 /* ArtistListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,8 @@
 		B529BCFA281B470700C613A7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B529BD1F281B7DF300C613A7 /* ArtistList */,
+				B529BD1E281B7DEC00C613A7 /* TrackList */,
 				B529BD17281B6F4200C613A7 /* Dashboard */,
 				B529BD14281B6F2900C613A7 /* AlbumList */,
 			);
@@ -280,6 +286,22 @@
 				B529BD1A281B6FD400C613A7 /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		B529BD1E281B7DEC00C613A7 /* TrackList */ = {
+			isa = PBXGroup;
+			children = (
+				B529BD20281B7E0400C613A7 /* TrackListViewModel.swift */,
+			);
+			path = TrackList;
+			sourceTree = "<group>";
+		};
+		B529BD1F281B7DF300C613A7 /* ArtistList */ = {
+			isa = PBXGroup;
+			children = (
+				B529BD22281B7E0F00C613A7 /* ArtistListViewModel.swift */,
+			);
+			path = ArtistList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,10 +444,12 @@
 				B529BCF5281B427600C613A7 /* AlbumListReducer.swift in Sources */,
 				B529BD05281B502C00C613A7 /* LoadState.swift in Sources */,
 				B529BD13281B6E9000C613A7 /* TabReducer.swift in Sources */,
+				B529BD23281B7E0F00C613A7 /* ArtistListViewModel.swift in Sources */,
 				B529BD0F281B6E6600C613A7 /* TabState.swift in Sources */,
 				B529BD1D281B6FFB00C613A7 /* AlbumListViewModel.swift in Sources */,
 				B529BD1B281B6FD400C613A7 /* DashboardViewModel.swift in Sources */,
 				B529BCE2281A896F00C613A7 /* MusicLoader.swift in Sources */,
+				B529BD21281B7E0400C613A7 /* TrackListViewModel.swift in Sources */,
 				B529BCFC281B472200C613A7 /* AlbumListView.swift in Sources */,
 				B529BD03281B500B00C613A7 /* FilterState.swift in Sources */,
 				B529BCF0281B414000C613A7 /* AppAction.swift in Sources */,

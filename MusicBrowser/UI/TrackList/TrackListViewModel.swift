@@ -1,5 +1,5 @@
 //
-//  AlbumListViewModel.swift
+//  TrackListViewModel.swift
 //  MusicBrowser
 //
 //  Created by Mohammad Rahchamani on 4/29/22.
@@ -9,11 +9,11 @@ import Foundation
 import CombineRex
 import SwiftRex
 
-enum AlbumListViewModel {
+enum TrackListViewModel {
     
     static func viewModel<S: StoreType>(from store: S) -> ObservableViewModel<ViewAction, ViewState> where S.ActionType == AppAction, S.StateType == AppState {
         store.projection(action: ViewAction.toAppAction(_:),
-                         state: ViewState.fromAppState(_: ))
+                         state: ViewState.fromAppState(_:))
             .asObservableViewModel(initialState: .initialState)
     }
     
@@ -22,9 +22,9 @@ enum AlbumListViewModel {
         var filteredAlbums: [MusicAlbum]
         var query: String
         var isLoading: Bool
-        let title = "Albums"
+        let title = "Tracks"
         
-        static var initialState: ViewState {
+        static var initialState:  ViewState {
             ViewState(albums: [],
                       filteredAlbums: [],
                       query: "",
@@ -46,9 +46,7 @@ enum AlbumListViewModel {
                 isLoading = false
             }
             
-            albums = albums.sorted {
-                $0.album < $1.album
-            }
+            albums = albums.sorted { $0.artist < $1.artist }
             let query = state.query
             
             let filteredAlbums = query.isEmpty ? albums : albums.filter { album in
